@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		get_tree().change_scene_to_file("res://scenes/Level1.tscn")
+		get_tree().change_scene_to_file("res://scenes/DialogScene.tscn")
 	elif event is InputEventMouseButton:
-		get_tree().change_scene_to_file("res://scenes/Level1.tscn")
+		get_tree().change_scene_to_file("res://scenes/DialogScene.tscn")
 	
