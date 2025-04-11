@@ -100,7 +100,7 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_progress = true
-		
+		$AttackSfx.play()
 		$AnimatedSprite2D.play("attack")
 		$DealAttack.start()
 

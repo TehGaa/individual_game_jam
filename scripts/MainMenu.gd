@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	Global.level = "MainMenu"
+	Global.character_damage = 20
 	MusicManager.play_music(preload("res://assets/background_music/boss_fight_cut.wav"))
 	
 

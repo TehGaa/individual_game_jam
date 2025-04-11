@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cuo3rht3uwc1d"]
+[gd_scene load_steps=58 format=3 uid="uid://cuo3rht3uwc1d"]
 
 [ext_resource type="Texture2D" uid="uid://c8q2dyagkm3fg" path="res://assets/craftpix-net-453698-free-shinobi-sprites-pixel-art/Samurai/Idle.png" id="1_2g5wi"]
 [ext_resource type="Script" path="res://scripts/Player1.gd" id="1_5fsve"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yd5omdhksr42" path="res://assets/craftpix-net-453698-free-shinobi-sprites-pixel-art/Samurai/Jump.png" id="4_qti0u"]
 [ext_resource type="Texture2D" uid="uid://crhcpw14d4y2t" path="res://assets/craftpix-net-453698-free-shinobi-sprites-pixel-art/Samurai/Run.png" id="5_yrje4"]
 [ext_resource type="Texture2D" uid="uid://kypyocj42iw6" path="res://assets/craftpix-net-453698-free-shinobi-sprites-pixel-art/Samurai/Walk.png" id="6_rsyhm"]
+[ext_resource type="AudioStream" uid="uid://bxf2ep8wkm63u" path="res://assets/sfx/07_human_atk_sword_3.wav" id="10_uqyni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_amowb"]
 atlas = ExtResource("1_p2ubb")
@@ -399,6 +400,9 @@ wait_time = 2.0
 scale = Vector2(0.7, 0.7)
 
 [node name="LegendSlain" parent="." instance=ExtResource("2_roalt")]
+
+[node name="AttackSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_uqyni")
 
 [connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="PlayerHitbox" to="." method="_on_player_hitbox_body_exited"]
