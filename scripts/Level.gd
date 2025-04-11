@@ -26,4 +26,5 @@ func _process(delta: float) -> void:
 		openedDoor.visible = true
 		
 		if (name == "Level3"):
-			player.legendSlain.visible = true
+			if player.health > 0:
+				player.legendSlain.visible = true

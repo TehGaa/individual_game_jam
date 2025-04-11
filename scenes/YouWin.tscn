@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3c1a7qq17gt6"]
+
+[ext_resource type="Script" path="res://scripts/YouWin.gd" id="1_dojkb"]
+[ext_resource type="FontFile" uid="uid://brwraxrwykeoi" path="res://assets/Elden Ring Font/mantinia/Mantinia Regular/Mantinia Regular.otf" id="1_ho181"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydxn0"]
+font = ExtResource("1_ho181")
+font_size = 191
+font_color = Color(0.731835, 0.595761, 0.328526, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vnkaj"]
+font = ExtResource("1_ho181")
+
+[node name="YouWin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dojkb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_ydxn0")
+uppercase = true
+
+[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Your underwear has been retrieved!"
+label_settings = SubResource("LabelSettings_vnkaj")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ChangeScene" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="ChangeScene" to="." method="_on_change_scene_timeout"]

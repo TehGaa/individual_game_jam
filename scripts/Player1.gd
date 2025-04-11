@@ -32,7 +32,6 @@ func _physics_process(delta):
 
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
-	attack()
 	enemy_attack()
 
 	if player_alive == false:
@@ -45,6 +44,7 @@ func _physics_process(delta):
 		$DeathProgressAnimation.start(1)
 	else:
 		if is_on_floor():
+			attack()
 			if direction:
 				if direction > 0:
 					current_dir = "right"
